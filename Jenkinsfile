@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Tests unitaires') {
             steps {
-                sh 'mvn test'
+                sh 'mvn -B test'
             }
             post {
                 always {
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Livrable') {
             steps {
-                sh 'mvn package -DskipTests'
+                sh 'mvn -B package -DskipTests'
             }
         }
     }
